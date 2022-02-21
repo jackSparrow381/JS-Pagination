@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Search</title>
+    <style>
+        table {
+            align-self: center;
+            width: 70%;
+            margin-left: 100px;
+            border: 1px solid black;
+            border-collapse: collapse;
+
+        }
+
+        th,
+        tr,
+        td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        th {
+            background-color: palegreen;
+        }
+    </style>
+</head>
+
+<body>
+    <P id="demo"></P>
+    <label for="search">Search Anything in Table:</label> <input type="search" id="search" onkeyup="filter()"> <br> <br>
+
+    <label for="drop"></label>
+    <select name="drop" id="drop" onchange="dropdown(event)">
+        <option></option>
+        <option id="all">All</option>
+        <option id="completed">Completed</option>
+        <option id="Uncompleted">Uncompleted</option>
+    </select> <br><br>
+
+    <button id="first" onclick="first()">First</button>
+    <button id="next" onclick="next()">Next</button>
+    <button id="prev" onclick="prev()">Previous</button>
+    <button id="last" onclick="last()">Last</button>
+
+    <select name="sort" id="sort" onchange="sortOut(event)">
+        <option>Select table size per page</option>
+        <option id="oneZero" selected>10</option>
+        <option id="twofive">25</option>
+        <option id="forty">40</option>
+    </select> <br> <br>
+
+    <div id="flex">
+        <table id="myTable">
+            <thead>
+                <th>id</th>
+                <th>Title</th>
+                <th>Completed</th>
+            </thead>
+            <tbody id="tbody">
+
+            </tbody>
+        </table> <br> <br>
+
+
+    </div>
+
+    <script src="Create Table Search.js"> </script>
+</body>
+
+</html>
